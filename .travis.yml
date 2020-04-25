@@ -3,7 +3,7 @@ services:
  - docker
 
 before_install:
- - docker build -t mojoboss/docker-react -f Dockerfile.dev .
+        - docker build -t mojoboss/docker-react:latest -f Dockerfile.dev .
 script:
- - docker run -e CI=true USERNAME/docker-react npm run test -- --coverage
+        - docker run -e CI=true mojoboss/docker-react:latest npm run test -- --coverage
 language: generic
