@@ -1,4 +1,6 @@
-FROM node:alpine as builder
+# elasticbeanstalk has a bug where it fails to take named build in a multi step build
+# FROM node:alpine as builder
+FROM node:alpine
 WORKDIR 'app/'
 COPY package*.json ./
 RUN npm install
